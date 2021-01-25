@@ -3,6 +3,7 @@ const express = require('express')
 const router = express.Router()
 const multer = require('multer')
 const art = require('../models/art')
+const fs = require('fs')
 
 //file adding middleware
 var storage = multer.diskStorage({
@@ -47,10 +48,11 @@ router.post('/', upload.single('image'), async(req,res)=>{
 //update ARTs
 router.post('/update', upload.single('image'), async (req,res)=>{
     //check is there new file uploaded.
-    console.log(req.body)
     var artOB = await art.findById(req.body.id)
     if(req.file){
-       artOB.image = req.file.path 
+        fs.unlinkSync(artOB.image)
+        artOB.image = req.file.path 
+       
     }
     artOB.name=req.body.name,
     artOB.description=req.body.description,
@@ -68,7 +70,8 @@ router.post('/update', upload.single('image'), async (req,res)=>{
 
 //delete ARTs
 router.post('/delete', upload.single('image'),async(req,res)=>{
-   
+    var artOB = await art.findById(req.body.id)
+    fs.unlinkSync(artOB.image)
     await art.findByIdAndDelete(req.body.id)
     res.redirect('/arts')
 })
