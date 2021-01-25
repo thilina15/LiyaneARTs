@@ -1,0 +1,40 @@
+
+<%- include('_adminNav') %> 
+<style>
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+</style>
+
+<% if(locals.error){ %>
+    <%= error %>
+    <% } %>   
+
+<% arts.forEach(art=>{ %>
+    <div>
+
+        <form method="POST" enctype="multipart/form-data">
+        <img src="<%= art.image  %> " alt="image" width="300"  >
+        id: <input type="text" name="id" value="<%=art._id%>" readonly>
+        name: <input type="text" name="name" value= "<%= art.name  %>" >
+        price: <input type="number" name="price" value=<%= art.price %> >
+        description: <textarea name="description"  cols="30" rows="10"><%=art.description%></textarea>
+        
+        <input type="file" name="image">
+        
+        <button type="submit" formaction="/arts/delete">delete</button>
+        <button type="submit" formaction="/arts/update">update</button>
+        
+        
+        
+        </form>
+        
+        
+        
+        <br>
+        <br>
+        <br>
+    
+    </div>
+<% }) %>  

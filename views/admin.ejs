@@ -1,3 +1,13 @@
-this is admin page
-<a href="/login">log out</a>
 
+<%- include('_adminNav') %> 
+this is admin page
+
+<% if( locals.admin ==null){ %>
+    <h1>you must login to the system to access this page</h1>
+    <a href="/login">login from here</a>
+
+
+
+    <% }    else    { %>
+<h1>welcome <%= admin.name %> </h1>
+<%}%>

@@ -1,0 +1,16 @@
+<%- include('_adminNav') %> 
+
+add new art
+
+    <form action="/arts" method="POST" enctype="multipart/form-data">
+    name:<input type="text" name="name" required="true"><br>
+    image:<input type="file" name="image" required = "true"><br> 
+    price: <input type="number" name="price"><br>
+    description: <textarea name="description"  cols="30" rows="10">add description here...</textarea>
+    <button type="submit"> submit</button>
+    </form>
+
+    <% if(locals.error!=null){ %>
+        <%= error %>
+    <%}%>
+     
