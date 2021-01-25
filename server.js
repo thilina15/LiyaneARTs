@@ -1,8 +1,13 @@
+//check if we are in production environment
+if(process.env.NODE_ENV!=="production"){
+    require('dotenv').config()
+}
+
 const express =require('express')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const mongoose = require('mongoose')
-require('dotenv').config()
+
 
 const indexPage = require('./routes/index')
 
