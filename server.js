@@ -42,5 +42,12 @@ app.use('/login',loginPage)
 app.use('/admin',adminPage)
 app.use('/arts',artEditRoute)
 
+app.get('/kamal', (req,res)=>{
+    res.send('inside kamal')
+})
 
 app.listen(process.env.PORT||3000)
+
+
+
+
