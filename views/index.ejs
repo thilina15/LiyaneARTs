@@ -1,1 +1,29 @@
-this is the body content
+<style>
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+</style>
+
+<% if(locals.error){ %>
+    <%= error %>
+    <% } %>   
+
+<% arts.forEach(art=>{ %>
+    <div>
+
+        
+        <img src="<%= art.image  %> " alt="image" width="300"  >
+        
+       <%= art.name  %>
+        <%= art.price %>
+        <%=art.description%>
+        
+       
+        
+        <br>
+        <br>
+        <br>
+    
+    </div>
+<% }) %>  
