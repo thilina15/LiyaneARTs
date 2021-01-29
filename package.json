@@ -20,5 +20,13 @@
   "devDependencies": {
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thilina15/LiyaneARTs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thilina15/LiyaneARTs/issues"
+  },
+  "homepage": "https://github.com/thilina15/LiyaneARTs#readme"
 }
