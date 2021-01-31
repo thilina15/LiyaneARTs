@@ -3,36 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../public/homePage.css">
+    <link rel="stylesheet" href="../public/homePage.css">
+    <link rel="stylesheet" href="/animate/aos.css">
     <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
     <title>Liyane ARTs</title>
-    <!-- <style>
-        body{
-            background-color: aqua;
-        }
-    </style> -->
 </head>
 <body>
        <!-- ********************************************* Menu ********************************************* -->
-<div class="container1">
+<div class="container1" id="container1">
     <div class="menuLeft">
-        <div class="logo"></div>
+        <div class="logo">
+            <img src="../public/images/logoW.png" id="logoIcon">
+        </div>
 
 
         <div class="menu">
             <div id="menubox">
                 <div id="AboutUs">
-                    <h1>About Us</h1>
+                    <h1><a href="#AbtTitle">About Us</a></h1>
                 </div>
                 <div id="Categories">
-                    <h1>Categories</h1>
+                    <h1><a href="#CatTitle">Categories</a></h1>
                 </div>
-                <div id="Gallery">
-                    
-                    <h1>Gallery</h1>
+                <div id="Gallery">              
+                    <h1><a href="#GalleryCont">Gallery</a></h1>
                 </div>
                 <div id="ContactUs">
-                    <h1>Contact Us</h1>
+                    <h1><a href="#footLeft">Contact Us</a></h1>
                 </div>
             </div>
         </div>
@@ -41,6 +38,7 @@
     <div class="menuRight"> </div>
 </div>
 
+<a id="HomeBtn" href="#container1" ><img  id="homeIcon" src="../public/images/HomeBtn1.png"/></a>
 
 
     <!-- ********************************************* About Us ********************************************* -->
@@ -49,7 +47,9 @@
         <h1>About Us</h1>
     </div>
 
-    <div id="AbtIcon"></div>
+    <div id="AbtIcon">
+
+    </div>
     <div id="ABtCont">
         <p1>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
@@ -63,7 +63,9 @@
 
 </div>
 
+    <div id="covermid">
 
+    </div>   
 
 
     <!-- ********************************************* Catogaries ********************************************* -->
@@ -75,7 +77,7 @@
     <div id="cat1Cont">
        
         <p1>
-            <h1><b> Lorem ipsum</b></h1>
+            <h2>Lorem ipsum</h3>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
             Modi sint cum saepe doloremque? Ad nesciunt eaque aut a sequi 
             laboriosam dolores, eveniet ab cupiditate vel, beatae assumenda voluptas! Eligendi, exercitationem.
@@ -90,7 +92,7 @@
     <div id="cat2Cont">
         
         <p1>
-            <h1><b> Lorem ipsum</b></h1>
+            <h2> Lorem ipsum</h2>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
             Modi sint cum saepe doloremque? Ad nesciunt eaque aut a sequi 
             laboriosam dolores, eveniet ab cupiditate vel, beatae assumenda voluptas! Eligendi, exercitationem.
@@ -99,21 +101,56 @@
             laboriosam dolores, eveniet ab cupiditate vel, beatae assumenda voluptas! Eligendi, exercitationem.
         <p1>
     </div>
-
-
-
-
-
-
 </div>
-    <div id="batta">
-        <%- body %>
+
+    <!-- ********************************************* Gallery ********************************************* -->
+
+    <div class="container4">
+        <div id="GalleryCont">
+           
+                <h1>Gallery</h1>
+           
+        </div>
     </div>
 
     <!-- ********************************************* Footer ********************************************* -->
     <div class="container5">
-        <div id="footLeft"></div>
-        <div id="footRight"></div>
+        <div id="footLeft">
+            <h2> Lorem ipsum</h2>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+            Modi sint cum saepe doloremque? Ad nesciunt eaque aut a sequi 
+            laboriosam dolores, eveniet ab cupiditate vel, beatae assumenda voluptas! Eligendi, exercitationem.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+            Modi sint cum saepe doloremque? Ad nesciunt eaque aut a sequi 
+            laboriosam dolores, eveniet ab cupiditate vel, beatae assumenda voluptas! Eligendi, exercitationem.
+        </div>
+        <div id="footRight">
+            <table class="footerTable">
+            <td>
+                <div class="footer-details-contact">
+                <h2 >contacts</h2>
+                <a href="https://www.facebook.com/malingaherathphotography">
+                    <img src="../public/Images/facebook.png" alt="facebook-logo" class="fimg">
+                    <h4 class="flink">www.facebook.com/malingaherathphotography</h4>
+                </a>
+                <a href="https://www.instagram.com/__malinga__/">
+                    <img src="../public/Images/instagram.png" alt="Instagam-logo" class="fimg">
+                    <h4 class="flink">www.instagram.com/__malinga__</h4>
+                </a>
+                <a href="mailto:malingashenal@gmail.com">
+                    <img src="../public/Images/gmail.png" alt="email-logo" class="fimg">
+                    <h4 class="flink">mailto:malingashenal@gmail.com</h4>
+                </a>
+                <a><img src="../public/Images/phone.png" alt="phone-logo" class="fimg">
+                <h4 class="flink">+94 76 865 2634</h4></a>
+            </div>
+            
+            </td>
+        </table>
+        </div>
+        <div id="footerLogo">
+
+        </div>
     
     
     
@@ -123,6 +160,12 @@
     
     
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+    <script src="/animate/aos.js" ></script>
+    <script>
+        AOS.init();
+      </script>
     
 </body>
 </html>
