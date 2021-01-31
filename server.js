@@ -42,14 +42,7 @@ app.use('/login',loginPage)
 app.use('/admin',adminPage)
 app.use('/arts',artEditRoute)
 
-app.get('/kamal', (req,res)=>{
-    res.send('inside kamal')
-})
+
 
 app.listen(process.env.PORT||3000)
 
-//hellow
-//created from branch master
-//second comment from JB
-
-//edited by soysa
