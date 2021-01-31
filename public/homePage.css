@@ -297,7 +297,7 @@ a {
 /* **************************************************** Gallery **************************************************** */
 .container4 {
   background-color: #c5c6c7;
-  height: 600px;
+  height: auto;
   grid-area: container4;
 }
 

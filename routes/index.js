@@ -9,4 +9,10 @@ router.get('/',async(req,res)=>{
     res.render('index',{arts:arts})
 })
 
+//gallery page
+router.get('/gallery', async(req,res)=>{
+    const arts = await art.find({})
+    res.render('gallery',{arts:arts})
+})
+
 module.exports = router
