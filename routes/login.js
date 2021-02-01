@@ -9,12 +9,11 @@ router.get('/',(req,res)=>{
 router.post('/',async (req,res)=>{
     const log = await admin.findOne({"userName":req.body.userName,"password":req.body.password})
     if(log!==null){
-        //res.render('admin',{admin :log})
-        //res.redirect(`admin`,{admin: log})
-        res.redirect('admin',{admin: log})
+        req.session.user='liyane admin'
+        res.redirect('admin')
     }else{
         res.render('login', {error: 'invalid login details'})
     }
 })
 
-module.exports = router
+module.exports = router  

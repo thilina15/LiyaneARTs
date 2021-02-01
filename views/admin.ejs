@@ -1,13 +1,26 @@
 
-<%- include('_adminNav') %> 
-this is admin page
+    <%- include('_adminNav') %> 
+    this is admin page
+    <h1>welcome <%= admin.name %> </h1>
 
-<% if( locals.admin ==null){ %>
-    <h1>you must login to the system to access this page</h1>
-    <a href="/login">login from here</a>
+    <div>
+        update account details
+        <form action="/admin/account" method="POST">
+        name: <input type="text" name="name" value="<%=admin.name%>">
+        email: <input type="text" name="email" value="<%=admin.email%>">
+        contact number: <input type="text" name="contactNumber" value="<%=admin.contactNumber%>" >
+        <button type="submit"> update account details</button>
+        
+        </form>
+    </div>
 
+    <div>
+        update login details
+        <form action="/admin/login" method="POST">
+        user name: <input type="text" name="userName" value="<%=admin.userName%>" required>
+        current password: <input type="password" name="currentPassword" required>
+        new password: <input type="password" name="newPassword" required>
+        <button type="submit">update login details</button>
 
-
-    <% }    else    { %>
-<h1>welcome <%= admin.name %> </h1>
-<%}%>
+        </form>
+    </div>

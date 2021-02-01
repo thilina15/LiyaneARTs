@@ -4,6 +4,7 @@ const router = express.Router()
 const multer = require('multer')
 const art = require('../models/art')
 const fs = require('fs')
+const {adminAuth} = require('../routes/adminAuth')
 
 //file adding middleware
 var storage = multer.diskStorage({
@@ -17,13 +18,14 @@ var storage = multer.diskStorage({
 const upload = multer({storage: storage})
 
 //view all arts
-router.get('/', async(req, res)=>{
+router.get('/', adminAuth,async(req, res)=>{
     const artsOB = await art.find({})
+    console.log(req.session)
     res.render('arts',{arts: artsOB})
 })
 
 
-router.get('/new',(req,res)=>{
+router.get('/new',adminAuth,(req,res)=>{
     res.render('new')
 })
 

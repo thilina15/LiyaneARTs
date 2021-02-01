@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/homePage.css">
+    <link rel="stylesheet" href="/animate/aos.css">
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <title>Liyane ARTs</title>
+</head>
+<body>
+       <!-- ********************************************* Menu ********************************************* -->
+<div class="container1" id="container1">
+    <div class="menuLeft">
+        <div class="logo">
+            <img src="../public/images/logoW.png" id="logoIcon">
+        </div>
+
+
+        <div class="menu">
+            <div id="menubox">
+                <!-- check if we are in the index page. then only show the navigation boxes other than contact us -->
+                <% if(locals.index){ %>
+
+                    <div id="AboutUs">
+                        <h1><a href="#AbtTitle">About Us</a></h1>
+                    </div>
+                    <div id="Categories">
+                        <h1><a href="#CatTitle">Categories</a></h1>
+                    </div>
+                    <div id="Gallery">              
+                        <h1><a href="#GalleryCont">Gallery</a></h1>
+                    </div>
+                <% } %> 
+                <div id="ContactUs">
+                    <h1><a href="#footLeft">Contact Us</a></h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="menuRight"> </div>
+</div>
+
+<a id="HomeBtn" href="#container1" ><img  id="homeIcon" src="../public/images/HomeBtn1.png"/></a>
