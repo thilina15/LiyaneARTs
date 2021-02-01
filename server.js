@@ -8,6 +8,8 @@ const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const session = require('express-session')
+const {v4: uuidv4} = require('uuid')
 
 
 const indexPage = require('./routes/index')
@@ -17,11 +19,19 @@ const artEditRoute = require('./routes/arts')
 
 app.set('view engine', 'ejs')
 app.set('views',__dirname+'/views')
-app.set('layout', 'layouts/layout')
-app.use(expressLayouts)
+//remove the layouts for next update
+//app.set('layout', 'layouts/layout')
+//app.use(expressLayouts)
 app.use('/public',express.static('public'))
 app.use('/uploads',express.static('uploads'))
 app.use(bodyParser.urlencoded({limit: '10mb', extended: false}))
+
+//session
+app.use(session({
+    secret: uuidv4(),
+    resave: false,
+    saveUninitialized: true
+}))
 
 //databse connection
 mongoose.connect(process.env.DATABASE_URL,{
@@ -44,5 +54,5 @@ app.use('/arts',artEditRoute)
 
 
 
-app.listen(process.env.PORT||3000)
-
+app.listen(process.env.PORT||3000) 
+ 

@@ -6,7 +6,13 @@ const express = require('express')
 //main page
 router.get('/',async(req,res)=>{
     const arts = await art.find({})
-    res.render('index',{arts:arts})
+    res.render('index',{arts:arts , index:true})
+})
+
+//gallery page
+router.get('/gallery', async(req,res)=>{
+    const arts = await art.find({})
+    res.render('gallery',{arts:arts})
 })
 
 module.exports = router
