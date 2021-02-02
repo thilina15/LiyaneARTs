@@ -1,29 +1,57 @@
 
-<!-- headder -->
-<%- include('indexHeadder') %> 
-
-<% if(locals.error){ %>
-    <%= error %>
-    <% } %>   
-
-<% arts.forEach(art=>{ %>
-    <div id="galSep">
-
-        
-        <img src="<%= art.image  %> " alt="image" width="300"  >
-        
-       <%= art.name  %>
-        <%= art.price %>
-        <%=art.description%>
-        
-       
-        
-        <br>
-        <br>
-        <br>
+    <link rel="stylesheet" href="../public/gallery.css">
     
-    </div>
-<% }) %>  
+    
+    <!-- headder -->
+<div id="galHeader">
+   <%- include('indexHeadder') %>  
+</div>
 
+<div id="galContent">
+    
+    <% if(locals.error){ %>
+        <%= error %>
+        <% } %>   
+
+    <% arts.forEach(art=>{ %>
+        <div id="galSep">
+
+            <div id="galImg">
+                <img src="<%= art.image  %> " alt="image" width="300"  >
+            </div>
+            
+            <div id="galImgDis">
+                <div id="galImgName">
+                    <%= art.name  %>
+                </div>
+                   
+                <div id="galImgPrice">
+                    Rs.<%= art.price %>
+                </div>
+
+                <div id="galImgDescript">
+                    <%=art.description%>
+                </div>
+            </div>
+           
+            
+            
+            
+        
+            
+            <br>
+            <br>
+            <br>
+        
+        </div>
+    <% }) %> 
+
+</div>
+
+<div id="galFooter">   
 <!-- footer -->
 <%- include('indexFooter') %> 
+</div>
+
+ 
+

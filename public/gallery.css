@@ -1,0 +1,63 @@
+body {
+  height: 100%;
+}
+
+#galContent {
+  display: flex;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  row-gap: 20px;
+}
+
+#galSep {
+  /* background-color: rgb(243, 241, 241); */
+  margin: 5px;
+  padding: 3px;
+  display: grid;
+  padding-bottom: 0px;
+  grid-template-columns: 1f;
+  grid-template-rows: 1fr 0.05fr;
+  grid-template-areas:
+    "galImg"
+    "galImgDis";
+  row-gap: 10px;
+  transition: 0.3s;
+  align-items: flex-start;
+}
+
+#galSep:hover {
+  /* background-color: rgb(216, 215, 215); */
+  transition: 0.3s;
+  transform: scale(1.05);
+  /* box-shadow: 1px 3px 3px #95989b; */
+}
+
+#galImg {
+  grid-area: galImg;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  /* background-color: turquoise; */
+  padding: 5px;
+}
+
+#galImgName {
+  font-weight: bold;
+  font-size: 150%;
+}
+
+#galImgDis {
+  grid-area: galImgDis;
+  background-color: #45a29e;
+  padding: 10px;
+  display: grid;
+  align-content: center;
+}
+
+#galImgDescript {
+  width: 160px;
+  color: #ffffff;
+}
