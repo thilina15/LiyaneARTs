@@ -7,7 +7,7 @@
 
 body {
   display: grid;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 2fr 2fr 0.55fr;
   grid-template-areas:
@@ -17,6 +17,7 @@ body {
     "container3"
     "container4"
     "container5";
+  align-content: center;
 }
 
 /* **************************************************** Menu **************************************************** */
@@ -519,6 +520,10 @@ a {
   /* text-shadow: 0 0 3px #66fcf263; */
 }
 
+#resGal {
+  display: none;
+}
+
 /* **************************************************** Footer **************************************************** */
 
 .container5 {
@@ -724,6 +729,40 @@ h4 {
     background-size: 400px auto;
     background-position: top;
     /* background-color: sandybrown; */
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    grid-template-rows: 0.68fr 0.85fr 0.85fr 1.5fr 1.5fr 0.55fr;
+    padding: 0;
+    margin: 0;
+    row-gap: 0;
+    justify-content: center;
+  }
+
+  .container1 {
+    grid-template-columns: 2fr 5fr;
+  }
+
+  .menuLeft {
+    grid-template-rows: 4fr 5.5fr;
+    padding: 60px 0;
+  }
+
+  .logo {
+    align-items: flex-end;
+  }
+
+  #AbtIcon {
+    background-size: 400px auto;
+  }
+
+  /* cat1Icon {
+    background-size: 50px auto;
+  } */
+  .container3 {
+    padding: 30px;
   }
 }
 
@@ -1037,7 +1076,7 @@ h4 {
 
 @media screen and (max-width: 600px) {
   body {
-    grid-template-rows: 0.25fr 0.55fr 0.55fr 0.9fr 0.9fr 0.4fr;
+    grid-template-rows: 0.9fr 0.55fr 0.55fr 0.9fr 0.9fr 0.3fr;
     width: 100%;
   }
 
@@ -1062,9 +1101,9 @@ h4 {
   .menu {
     background-color: #1f2833;
     opacity: 93%;
-    transform: translateY(-105%);
+    transform: translateY(-135%);
     /* display: none; */
-    transition: transform 0.5 ease-in;
+    transition: transform 0.5 ease-in-out;
   }
 
   .logo {
@@ -1084,5 +1123,311 @@ h4 {
 
   .nav-active {
     transform: translateY(0%);
+  }
+
+  #HomeBtn {
+    padding: 5px;
+  }
+
+  #HomeBtn:hover {
+    padding: 8px;
+  }
+  #homeIcon {
+    height: 40px;
+    width: auto;
+  }
+
+  #showMoreBtn {
+    width: 100px;
+    padding: 8px;
+  }
+
+  #GalleryCont {
+    padding: 10px;
+  }
+
+  .container5 {
+    grid-template-rows: 0.6fr 0.2fr;
+  }
+
+  .flink {
+    font-size: 9px;
+  }
+
+  #footLeft {
+    font-size: 10px;
+  }
+  #footerLogo {
+    background-size: 200px auto;
+  }
+
+  .fimg {
+    height: 30px;
+    width: auto;
+    padding-left: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    grid-template-rows: 0.25fr 0.4fr 0.4fr 0.6fr 0.9fr 0.3fr;
+    margin: 0;
+  }
+
+  #AbtIcon {
+    background-size: 150px auto;
+  }
+  #ABtCont {
+    font-size: 10px;
+  }
+
+  #cat1Cont {
+    font-size: 10px;
+  }
+
+  #cat1Icon {
+    background-size: 120px auto;
+  }
+
+  #cat2Cont {
+    font-size: 10px;
+  }
+
+  #cat2Icon {
+    background-size: 100px auto;
+  }
+
+  .flink {
+    font-size: 9px;
+  }
+
+  #footLeft {
+    font-size: 9px;
+  }
+  #footerLogo {
+    background-size: 180px auto;
+  }
+
+  .fimg {
+    height: 25px;
+    width: auto;
+    padding-left: 8px;
+  }
+  #GalleryCont {
+    grid-template-rows: 0.2fr 2fr 0.2fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "galTitle"
+      "resGal"
+      "showMore";
+  }
+
+  #galCat1 {
+    display: none;
+  }
+  #galCat2 {
+    display: none;
+  }
+  #resGal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    padding: 40px 0px;
+  }
+
+  #pic1R {
+    width: 200px;
+    height: auto;
+  }
+  #pic2R {
+    width: 200px;
+    height: auto;
+  }
+  #pic3R {
+    width: 200px;
+    height: auto;
+  }
+  #pic4R {
+    width: 200px;
+    height: auto;
+  }
+  #pic5R {
+    width: 200px;
+    height: auto;
+  }
+  #pic6R {
+    width: 200px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  body {
+    grid-template-rows: 0.2fr 0.23fr 0.25fr 0.6fr 0.7fr 0.2fr;
+    margin: 0;
+  }
+  .container2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas:
+      "AbtTitle"
+      "ABtCont";
+  }
+  #AbtIcon {
+    display: none;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+  #covermid {
+    background-size: 900px auto;
+    background-repeat: no-repeat;
+  }
+  .container3 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 4fr 2fr 4fr;
+    grid-template-areas:
+      "CatTitle"
+      "cat1Icon"
+      "cat1Cont"
+      "cat2Icon"
+      "cat2Cont";
+    padding-top: 20px;
+    row-gap: 0;
+  }
+
+  #cat1Icon {
+    background-size: 50px auto;
+  }
+  #cat1Cont {
+    padding-top: 0;
+  }
+  #cat2Icon {
+    background-size: 50px auto;
+  }
+  #cat2Cont {
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  #resGal {
+    padding: 20px 0px;
+  }
+
+  .container5 {
+    background-color: #1f2833;
+    grid-area: container5;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 0.6fr 0.2fr;
+    grid-template-areas:
+      "footLeft"
+      "footRight"
+      "footerLogo";
+  }
+
+  #footRight {
+    /* display: flex; */
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  #footLeft {
+    padding-bottom: 0;
+  }
+  #cont {
+    display: none;
+  }
+
+  .footer-details-contact a {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+  }
+
+  .fimg {
+    width: 35px;
+    height: 35px;
+    padding-left: 40%;
+    padding-right: 40%;
+  }
+
+  #footerLogo {
+    background-size: 200px auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  body {
+    grid-template-rows: 0.2fr 0.15fr 0.3fr 0.45fr auto 0.2fr;
+    margin: 0;
+  }
+
+  #resGal div img {
+    width: 150px;
+    height: auto;
+  }
+
+  #burger {
+    margin-right: 20px;
+    margin-top: 10px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  p {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  body {
+    width: 100%;
+    padding: 0;
+    grid-template-rows: 0.2fr 0.15fr 0.3fr 0.45fr auto 0.5fr;
+  }
+  #resGal div img {
+    width: 200px;
+    height: auto;
+  }
+  p {
+    font-size: 9px;
+    padding: 0 20px;
+  }
+
+  #GalleryCont {
+    margin: 0;
+    padding: 0;
+  }
+
+  #resGal {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 317px) {
+  /* body {
+    grid-template-rows: 0.2fr 0.15fr 0.3fr 0.45fr auto 0.4fr;
+  } */
+  p {
+    display: flex;
+    font-size: 9px;
+    padding: 0 30px;
+    margin: 10px;
+    text-align: center;
+  }
+
+  #footLeft {
+    padding: 3px;
+  }
+
+  .container5 {
+    grid-template-rows: 0.6fr 0.6fr 0.2fr;
   }
 }
