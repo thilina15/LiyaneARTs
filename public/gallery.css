@@ -1,6 +1,18 @@
-body {
-  height: 100%;
-}
+/* body {
+  display: grid;
+  overflow-x: hidden;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 100% 1fr;
+  grid-template-areas:
+    "galHeader"
+    "galContent"
+    "galFooter";
+  align-content: center;
+} */
+
+/* #galHeader {
+  grid-area: galHeader;
+} */
 
 #galContent {
   display: flex;
@@ -10,6 +22,7 @@ body {
   flex-wrap: wrap;
   align-content: flex-end;
   row-gap: 20px;
+  grid-area: galContent;
 }
 
 #galSep {
@@ -61,3 +74,7 @@ body {
   width: 160px;
   color: #ffffff;
 }
+
+/* #galFooter {
+  grid-area: galFooter;
+} */
