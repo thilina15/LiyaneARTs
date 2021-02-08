@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../public/gallery.css">
 
-        <link rel="stylesheet" href="/animate/aos.css">
+        <link rel="stylesheet" href="/public/animate/aos.css">
         <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
         <title>Liyane ARTs</title>
     </head>
@@ -71,20 +71,18 @@
 
     <% arts.forEach(art=>{ %>
         <div id="galSep">
-
             <div id="galImg">
-                <img src="<%= art.image  %> " alt="image" width="300"  >
+                <a href="<%= art.image  %>">
+                    <img src="<%= art.image  %> " alt="image" width="300"  >
+                </a>
             </div>
-            
             <div id="galImgDis">
                 <div id="galImgName">
                     <%= art.name  %>
                 </div>
-                   
                 <div id="galImgPrice">
                     Rs.<%= art.price %>
                 </div>
-
                 <div id="galImgDescript">
                     <%=art.description%>
                 </div>
@@ -92,22 +90,16 @@
             <br>
             <br>
             <br>
-        
         </div>
     <% }) %> 
-
 </div>
 
 
 <div class="container5">
     <div id="footLeft">
-        <h2> Lorem ipsum</h2>
-       <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-        Modi sint cum saepe doloremque? Ad nesciunt eaque aut a sequi 
-        laboriosam dolores, eveniet ab cupiditate vel, beatae assumenda voluptas! Eligendi, exercitationem.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-        Modi sint cum saepe doloremque? Ad nesciunt eaque aut a sequi 
-        laboriosam dolores, eveniet ab cupiditate vel, beatae assumenda voluptas! Eligendi, exercitationem.
+        <h2> Liyane Arts</h2>
+       <p> High quality attractive handmade crafts for reasonable price and
+        Island wide delivery... Come and shop with us...
     </p>
     </div>
     <div id="footRight">
