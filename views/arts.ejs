@@ -1,30 +1,77 @@
 
 <%- include('_adminNav') %> 
-<!-- <style>
-    img {
-      max-width: 100%;
-      height: auto;
+<style>
+    .art-row {
+      display: flex;
+      margin-bottom: .5rem;
     }
-</style> -->
+    .art-item {
+        display: flex;
+        flex-direction: column;
+        margin-left: 2rem;
+        flex-grow: 1;
+        flex-basis: 0;
+        margin-right: 2rem;
+    }
+
+    .art-item-no-grow {
+        flex-grow: 0;
+    }
+    .item-child {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .art-item textarea {
+        height: 100%;
+        resize: none;
+    }
+    label {
+        font-size: 20px;
+    }
+</style>
 
 <% if(locals.error){ %>
     <%= error %>
     <% } %>   
 
 <% arts.forEach(art=>{ %>
-    <div>
-
-        <form method="POST" >
-        <img src="<%= art.imagePath  %> " alt="image" width="300"  >
-        id: <input type="text" name="id" value="<%=art._id%>" readonly>
-        name: <input type="text" name="name" value= "<%= art.name  %>" >
-        price: <input type="number" name="price" value=<%= art.price %> >
-        description: <textarea name="description"  cols="30" rows="10"><%=art.description%></textarea>
+    <form method="POST" >
+        <div class="art-row">
+            <div class="art-item ">
+                <label >Current Image</label>
+                <img src="<%= art.imagePath  %> "  alt="image" width=100%  >
+            </div>
+            <div class="art-item">
+                <label >Description</label>
+                <textarea name="description"  cols="30" rows="10"><%=art.description%></textarea>
+            </div>
+            <div class="art-item">
+                <label >ID</label>
+                <input type="text" name="id" value="<%=art._id%>" readonly>
+                <div class="art-item item-child">
+                    <label >New Image</label>
+                    <input type="file" name="image" class="filepond" >
+                </div>
+            </div>
+            
+            <div class="art-item">
+                <label >Title</label>
+                <input type="text" name="name" value= "<%= art.name  %>" >
+                <div class="art-item item-child">
+                    <label >Price</label>
+                    <input type="number" name="price" value=<%= art.price %> >
+                </div>   
+                 
+                
+                <div class="art-item">
+                    <button style="background-color: red;" type="submit" formaction="/arts/delete"><h2 style="color:white">DELETE</h2></button>
+                    <button style="background-color: yellow;" type="submit" formaction="/arts/update"><h2 >UPDATE</h2></button>
+                </div>
+            </div>
+        </div>    
         
-        <input type="file" name="image" class="filepond" >
         
-        <button type="submit" formaction="/arts/delete">delete</button>
-        <button type="submit" formaction="/arts/update">update</button>
+        
         
         
         
@@ -36,7 +83,7 @@
         <br>
         <br>
     
-    </div>
+    
 <% }) %>  
 </body>
 </html>

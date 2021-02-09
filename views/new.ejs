@@ -1,14 +1,67 @@
 <%- include('_adminNav') %> 
 
+<style>
+    .art-row {
+      display: flex;
+      margin-bottom: .5rem;
+    }
+    .art-item {
+        display: flex;
+        flex-direction: column;
+        margin-left: 2rem;
+        flex-grow: 1;
+        flex-basis: 0;
+        margin-right: 2rem;
+    }
 
-add new art
+    .art-item-no-grow {
+        flex-grow: 0;
+    }
+    .item-child {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .art-item textarea {
+        height: 100%;
+        resize: none;
+    }
+    label {
+        font-size: 20px;
+    }
+    
+</style>
+<center><h1>ADD ART</h1></center>
 
     <form action="/arts" method="POST" >
-    name:<input type="text" name="name" required="true"><br>
-    image:<input type="file" name="image" required = "true" class="filepond"><br> 
-    price: <input type="number" name="price"><br>
-    description: <textarea name="description"  cols="30" rows="10">add description here...</textarea>
-    <button type="submit"> submit</button>
+        <div class="art-row">
+            <div class="art-item">
+                <label > Title</label>
+                <input type="text" name="name" required="true">
+                <div class="art-item item-child  ">
+                    <label > Description</label>
+                    <textarea name="description"  cols="30" rows="10">add description here...</textarea>
+                </div>
+                <div class="art-item item-child">
+                    <label>Price</label>
+                    <input type="number" name="price">
+                </div>
+                <div class="art-item item-child">
+                    <label>ALL Good?</label>
+                    <button type="submit" style="background-color: orange;"> <h1 >ADD ART</h1></button>
+                </div>
+            </div>
+            <div class="art-item">
+                
+                <label>ART Image</label>
+                <input type="file" name="image" required = "true" class="filepond">
+            </div>
+            
+        </div>
+        
+    
+    
+    
+    
     </form>
 
     <% if(locals.error!=null){ %>

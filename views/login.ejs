@@ -1,9 +1,13 @@
-admin login
+
+
+<br><br><br><br><br><br><br>
+<center> <h1>ADMIN LOGIN</h1>
 <form action="/login" method="POST">
-user name: <input type="text" name = "userName"><br>
-password: <input type="password" name="password"><br>
+user name: <input type="text" name = "userName" ><br><br>
+password: <input type="password" name="password"><br><br>
 <button type="submit">login</button>
 </form>
+</center>
 
 <% if(locals.error != null){ %> 
     <%= error  %> 

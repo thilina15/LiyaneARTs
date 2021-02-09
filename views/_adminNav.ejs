@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
     <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
 
@@ -13,26 +14,43 @@
     <script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
     <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
     <script defer src="/public/fileUpload.js"></script>
+
+    <style>
+        .nav-row {
+            display: flex;
+            margin-bottom: 5rem;
+            margin-top: 5rem;
+        }
+        .nav {
+        display: flex;
+        flex-direction: column;
+        margin-left: 2rem;
+        flex-grow: 1;
+        flex-basis: 0;
+        margin-right: 2rem;
+        font-size: 1.5rem;
+    }
+    </style>
    
     <title>Document</title>
 </head>
 <body>
-
-    <nav>
-        <a href="/arts/new">add new art</a>
-    </nav>
-    
-    <nav>
-        <a href="/arts">view arts</a>
-    </nav>
-    
-    <nav>
-        <a href="/admin">account</a>
-    </nav>
-    
-    <nav>
-        <a href="/admin/logout">log out</a>
-    </nav>
+    <div class="nav-row">
+         <div class="nav">
+            <a href="/arts/new"><b>ADD NEW ART </b> </a>
+         </div>
+         <div class="nav">
+            <a href="/arts"> <b>VIEW ARTS</b> </a>
+         </div>
+         <div class="nav">
+            <a href="/admin"><b>ACCOUNT</b> </a>
+         </div>
+         <div class="nav">
+            <a href="/admin/logout"><b>LOG OUT</b> </a>
+         </div>
+    </div>
+    <hr>
+  
     
 
 
