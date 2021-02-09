@@ -5,6 +5,10 @@ const artSchema = new mongoose.Schema({
         required: true
     },
     image: {
+        type: Buffer,
+        required: true
+    },
+    imageType:{
         type: String,
         required: true
     },
@@ -15,6 +19,12 @@ const artSchema = new mongoose.Schema({
     date: {
         type: Date,
         default: Date.now()
+    }
+})
+
+artSchema.virtual('imagePath').get(function(){
+    if(this.image!=null && this.imageType!==null){
+        return `data: ${this.imageType};charset=utf-8;base64,${this.image.toString('base64')}`
     }
 })
 

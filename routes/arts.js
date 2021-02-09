@@ -1,26 +1,27 @@
+const { json } = require('body-parser')
 const { Router } = require('express')
 const express = require('express')
 const router = express.Router()
-const multer = require('multer')
 const art = require('../models/art')
-const fs = require('fs')
 const {adminAuth} = require('../routes/adminAuth')
 
-//file adding middleware
-var storage = multer.diskStorage({
-    destination: function(req, file, cb){
-        cb(null, './uploads/')
-    },
-    filename: function(req, file, cb){
-        cb(null, new Date().toISOString().replace(/:/g, '-') + '-' + file.originalname)
+
+
+
+//save art
+function saveArt(art, imageEncoded){
+    if(imageEncoded==null) return
+    const image = JSON.parse(imageEncoded) //covert encoded string to json format
+    if(image!=null){
+        art.image = new Buffer.from(image.data , 'base64') //image objects' data field -> buffer (in databse image save as a buffer)
+        art.imageType = image.type 
     }
-})
-const upload = multer({storage: storage})
+}
+
 
 //view all arts
 router.get('/', adminAuth,async(req, res)=>{
     const artsOB = await art.find({})
-    console.log(req.session)
     res.render('arts',{arts: artsOB})
 })
 
@@ -30,15 +31,15 @@ router.get('/new',adminAuth,(req,res)=>{
 })
 
 //add new ARTs
-router.post('/', upload.single('image'), async(req,res)=>{
+router.post('/',  async(req,res)=>{
     var uploadArt = new art({
         name:req.body.name,
-        image:req.file.path,
         description:req.body.description,
         price:req.body.price
     })
+    saveArt(uploadArt, req.body.image) //save the image details
    try{
-       const savedItem =await uploadArt.save()
+       await uploadArt.save()
        res.redirect('arts')
     }
     catch{
@@ -48,17 +49,14 @@ router.post('/', upload.single('image'), async(req,res)=>{
 })
 
 //update ARTs
-router.post('/update', upload.single('image'), async (req,res)=>{
+router.post('/update', async (req,res)=>{
     //check is there new file uploaded.
     var artOB = await art.findById(req.body.id)
-    if(req.file){
-        fs.unlinkSync(artOB.image)
-        artOB.image = req.file.path 
-       
-    }
+    
     artOB.name=req.body.name,
     artOB.description=req.body.description,
     artOB.price=req.body.price
+    saveArt(artOB,req.body.image)
 
     try{
         await artOB.save()
@@ -71,9 +69,7 @@ router.post('/update', upload.single('image'), async (req,res)=>{
 })
 
 //delete ARTs
-router.post('/delete', upload.single('image'),async(req,res)=>{
-    var artOB = await art.findById(req.body.id)
-    fs.unlinkSync(artOB.image)
+router.post('/delete',async(req,res)=>{
     await art.findByIdAndDelete(req.body.id)
     res.redirect('/arts')
 })
