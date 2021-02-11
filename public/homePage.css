@@ -392,7 +392,7 @@ a {
   background-color: rgb(243, 241, 241);
   box-shadow: -2px 2px 3px #9e9e9ea6;
   margin: 35px;
-  background-image: url(../public/images/galPic.jpg);
+  background-image: url(../public/images/galPic2.jpg);
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -411,7 +411,7 @@ a {
   background-color: rgb(243, 241, 241);
   box-shadow: -2px 2px 3px #9e9e9ea6;
   margin: 35px;
-  background-image: url(../public/images/galPic.jpg);
+  background-image: url(../public/images/galPic3.jpg);
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -438,7 +438,7 @@ a {
   background-color: rgb(243, 241, 241);
   box-shadow: -2px 2px 3px #9e9e9ea6;
   margin: 35px;
-  background-image: url(../public/images/galPic.jpg);
+  background-image: url(../public/images/galPic4.jpg);
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -457,7 +457,7 @@ a {
   background-color: rgb(243, 241, 241);
   box-shadow: -2px 2px 3px #9e9e9ea6;
   margin: 35px;
-  background-image: url(../public/images/galPic.jpg);
+  background-image: url(../public/images/galPic5.jpg);
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -476,7 +476,7 @@ a {
   background-color: rgb(243, 241, 241);
   box-shadow: -2px 2px 3px #9e9e9ea6;
   margin: 35px;
-  background-image: url(../public/images/galPic.jpg);
+  background-image: url(../public/images/galPic6.jpg);
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -535,6 +535,8 @@ a {
   grid-template-areas:
     "footLeft footRight"
     "footerLogo footerLogo";
+  /* padding-top: 20px; */
+  padding: 20px 0px;
 }
 
 #footLeft {
@@ -604,11 +606,13 @@ h4 {
   grid-area: footerLogo;
   /* background-color: cornflowerblue; */
   background-image: url(../public/images/footerLogo.png);
-  background-size: 600px auto;
+  background-size: 400px auto;
   background-repeat: no-repeat;
   display: grid;
   background-position: center;
   opacity: 0.7;
+  padding: 60px;
+  background-position: center;
 }
 
 /* ********************************************************************************** */
@@ -700,6 +704,7 @@ h4 {
   .container5 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 0.4fr 0.3fr;
+    padding: 15px 0px;
   }
 
   #footLeft {
@@ -764,17 +769,26 @@ h4 {
   .container3 {
     padding: 30px;
   }
+  .container5 {
+    padding: 30px;
+  }
+  #footerLogo {
+    background-size: 370px auto;
+  }
 }
 
 @media screen and (max-width: 941px) {
   body {
-    grid-template-rows: 1fr 0.85fr 0.85fr 1.5fr 1.8fr 0.55fr;
+    grid-template-rows: 1fr 0.85fr 0.85fr 1.5fr 1.8fr 0.45fr;
   }
 
   .container1 {
     background-size: 1fr auto;
     grid-template-columns: 1fr 3.2fr;
     background-size: 750px;
+  }
+  .container1 {
+    padding: 12px 0px;
   }
 
   .menuLeft {
@@ -816,135 +830,6 @@ h4 {
     background-size: 180px auto;
   }
 }
-
-/* @media screen and (max-width: 320px) {
-  body {
-    grid-template-rows: 0.15fr 0.4fr 0.2fr 0.4fr 1.8fr 0.15fr;
-    grid-template-columns: 1fr;
-  }
-
-  .container1 {
-    grid-template-columns: 100%;
-    grid-template-rows: 1fr;
-    grid-template-areas: "menuLeft";
-    background-image: url(../public/images/resCover.jpg);
-    background-size: 320px auto;
-    background-position: center;
-  }
-
-  .menuLeft {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-areas: "menuG";
-  }
-  .menu {
-    background-color: thistle;
-  }
-
-  .logo {
-    visibility: hidden;
-  }
-
-  #HomeBtn {
-    right: 10px;
-  }
-
-  #AbtTitle {
-    align-items: center;
-  }
-  .container2 {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 4fr;
-    grid-template-areas:
-      "AbtTitle"
-      "AbtIcon"
-      "ABtCont";
-  }
-
-  #AbtIcon {
-    background-size: 150px auto;
-    background-position: center;
-  }
-
-  #ABtCont {
-    font-size: 13px;
-  }
-
-  #covermid {
-    background-size: 500px auto;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: local;
-  }
-
-  .container3 {
-    grid-area: container3;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 2fr 1fr 2fr;
-    grid-template-areas:
-      "CatTitle"
-      "cat1Icon"
-      "cat1Cont"
-      "cat2Icon"
-      "cat2Cont";
-  }
-
-  #cat1Icon {
-    background-size: 100px auto;
-  }
-
-  #cat1Cont {
-    font-size: 13px;
-  }
-
-  #cat2Icon {
-    background-size: 100px;
-  }
-
-  #cat2Cont {
-    font-size: 13px;
-  }
-
-  .container5 {
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.3fr 0.3fr 0.3fr;
-    grid-template-areas:
-      "footLeft"
-      "footRight"
-      "footerLogo";
-  }
-
-  .fimg {
-    height: 20px;
-    width: auto;
-    padding-top: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 5px;
-  }
-
-  .flink {
-    font-size: 9px;
-  }
-
-  #footLeft {
-    padding: 20px;
-    font-size: 9px;
-  }
-
-  #footRight {
-    justify-content: center;
-  }
-
-  #footerLogo {
-    background-size: 230px auto;
-  }
-
-  h2 {
-    font-size: 12px;
-  }
-} */
 
 @media screen and (max-width: 768px) {
   body {

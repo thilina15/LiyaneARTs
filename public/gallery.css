@@ -240,6 +240,7 @@ a {
   grid-template-areas:
     "footLeft footRight"
     "footerLogo footerLogo";
+  padding: 20px;
 }
 
 #footLeft {
