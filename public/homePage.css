@@ -18,6 +18,8 @@ body {
     "container4"
     "container5";
   align-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 /* **************************************************** Menu **************************************************** */
@@ -617,6 +619,12 @@ h4 {
 
 /* ********************************************************************************** */
 /* ************************ Responsiveness ********************************** */
+body {
+  grid-template-columns: 1fr;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
 
 @media screen and (max-width: 1325px) {
   .container3 {
@@ -634,6 +642,7 @@ h4 {
 @media screen and (max-width: 1000px) {
   body {
     grid-template-rows: 0.85fr 0.85fr 0.85fr 1.5fr 1.5fr 0.55fr;
+
     padding: 0;
     margin: 0;
     row-gap: 0;
@@ -986,7 +995,7 @@ h4 {
   .menu {
     background-color: #1f2833;
     opacity: 93%;
-    transform: translateY(-135%);
+    transform: translateY(-235%);
     /* display: none; */
     transition: transform 0.5 ease-in-out;
   }
