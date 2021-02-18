@@ -4,7 +4,7 @@
 
     <h1>welcome <%= admin.name %> </h1>
 
-    <div>
+    <!-- <div>
         update account details
         <form action="/admin/account" method="POST">
         name: <input type="text" name="name" value="<%=admin.name%>">
@@ -13,15 +13,18 @@
         <button type="submit"> update account details</button>
         
         </form>
-    </div>
-
+    </div> -->
+    <hr>
+<center>
     <div>
-        update login details
-        <form action="/admin/login" method="POST">
-        user name: <input type="text" name="userName" value="<%=admin.userName%>" required>
-        current password: <input type="password" name="currentPassword" required>
-        new password: <input type="password" name="newPassword" required>
-        <button type="submit">update login details</button>
-
-        </form>
+        <h1>update login details</h1>
+        <div>
+            <form action="/admin/login" method="POST">
+                user name: <input type="text" name="userName" value="<%=admin.userName%>" required>
+                current password: <input type="password" name="currentPassword" required>
+                new password: <input type="password" name="newPassword" required>
+                <button type="submit">update login details</button>
+            </form>
+        </div>
     </div>
+</center>

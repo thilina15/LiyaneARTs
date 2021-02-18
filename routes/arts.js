@@ -11,11 +11,16 @@ const {adminAuth} = require('../routes/adminAuth')
 //save art
 function saveArt(art, imageEncoded){
     if(imageEncoded==null) return
-    const image = JSON.parse(imageEncoded) //covert encoded string to json format
-    if(image!=null){
-        art.image = new Buffer.from(image.data , 'base64') //image objects' data field -> buffer (in databse image save as a buffer)
-        art.imageType = image.type 
+    try{
+        const image = JSON.parse(imageEncoded) //covert encoded string to json format
+        if(image!=null){
+            art.image = new Buffer.from(image.data , 'base64') //image objects' data field -> buffer (in databse image save as a buffer)
+            art.imageType = image.type 
+        }
+    }catch(er){
+        return
     }
+    
 }
 
 
@@ -62,7 +67,7 @@ router.post('/update', async (req,res)=>{
         await artOB.save()
         res.redirect('/arts')
     }
-    catch{
+    catch(er){
         res.redirect('/arts')
     }
     
